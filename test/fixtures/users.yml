@@ -7,3 +7,8 @@ furukido:
   name: Furukido Ryuji
   email: ratovia@hotmail.co.jp
   password_digest: <%= User.digest('password') %>
+
+archer:
+  name: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= User.digest('password') %>
