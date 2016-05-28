@@ -3,7 +3,7 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:furukido)
-    @post = Post.new(wine:"aaa",user_id: @user.id)
+    @post = @user.posts.build(wine: "aaaa")
   end
 
   test "should be valid" do
@@ -24,5 +24,5 @@ class PostTest < ActiveSupport::TestCase
     @post.wine = "a" * 141
     assert_not @post.valid?
   end
-  
+
 end
