@@ -25,4 +25,7 @@ class PostTest < ActiveSupport::TestCase
     assert_not @post.valid?
   end
 
+  test "order should be most recent first" do
+    assert_equal posts(:lemon),Post.first
+  end
 end

@@ -1,9 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  wine: "orange wine!"
+  created_at: <%= 10.minutes.ago %>
 
-one:
-  wine: MyText
-  user_id: 
+apple:
+  wine: "apple wine!"
+  created_at: <%= 3.years.ago %>
 
-two:
-  wine: MyText
-  user_id: 
+grape:
+  wine: "grape wine!"
+  created_at: <%= 2.hours.ago %>
+
+lemon:
+  wine: "lemon wine!"
+  created_at: <%= Time.zone.now %>

@@ -70,4 +70,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+  test "assicuated posts should be destroyed" do
+    @user.save
+    @user.posts.create!(wine:"meron wine")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
+  end
 end
