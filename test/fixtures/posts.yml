@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wine: MyText
+  user_id: 
+
+two:
+  wine: MyText
+  user_id: 
