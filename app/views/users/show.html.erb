@@ -10,11 +10,11 @@
   </aside>
   <div class="col-md-8">
     <% if @user.posts.any? %>
-      <h3>posts (<%= @user.posts.count %>)</h3>
+      <h3>Posts(<%= @user.posts.count %>)</h3>
       <ol class="posts">
-        <%= render @posts %>
+        <%= render @post %>
       </ol>
-      <%= will_paginate @posts %>
+      <%= will_paginate @post %>
     <% end %>
   </div>
 </div>
