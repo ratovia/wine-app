@@ -4,5 +4,8 @@
   <span class="wine"><%= post.wine %></span>
   <span class="timestamp">
     投稿 <%= time_ago_in_words(post.created_at) %> ago.
+    <% if current_user?(post.user) %>
+      <%= link_to "delete" , post, method: :delete,data:{confirm: "削除しますか?"} %>
+    <% end %>
   </span>
 </li>
