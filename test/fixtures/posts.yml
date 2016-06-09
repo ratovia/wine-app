@@ -17,3 +17,8 @@ lemon:
   wine: "lemon wine!"
   created_at: <%= Time.zone.now %>
   user: michael
+
+ants:
+  wine: "leemon wine!"
+  created_at: <%= 1.years.ago %>
+  user: archer
