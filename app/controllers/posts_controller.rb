@@ -17,11 +17,11 @@ class PostsController < ApplicationController
     flash[:success] = "post deleted"
     redirect_to request.referrer || root_url
   end
-  
+
   private
 
     def post_params
-      params.require(:post).permit(:wine)
+      params.require(:post).permit(:wine,:picture)
     end
 
     def correct_user
