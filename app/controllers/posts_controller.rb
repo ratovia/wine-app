@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "post deleted"
+    flash[:success] = "post deleted"    
     redirect_to request.referrer || root_url
   end
 

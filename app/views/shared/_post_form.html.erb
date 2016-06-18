@@ -1,12 +1,30 @@
-<%= form_for(@post,html: {multipart: true}) do |f| %>
+  <%= form_for(@post,html: {multipart: true}) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :wine, placeholder: "Compose new post..." %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture,accept: 'image/jpeg,image/gif,image/png' %>
   </span>
+  <div class="radiobottons">
+    <div class="radio">
+      <label><input type="radio" name="radio" id="red" value="radio1">赤ワイン</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio" id="white" value="radio2">白ワイン</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio" id="rose" value="radio3">ロゼ</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="radio" id="spark" value="radio4">スパークリング</label>
+    </div>
+  </div>
+  <div class="sliders">
+    <input id="sweet" type="text" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'>
+    <input id="depth" type="text" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'>
+  </div>
+  <div class="field">
+    <%= f.text_area :wine, placeholder: "感想レビュー" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 
 <script type="text/javascript">
@@ -16,4 +34,16 @@
       alert('file > 5MB error');
     }
   })
+
+  $("#sweet").slider({
+    ticks: [0, 100, 200, 300, 400],
+    ticks_labels: ['甘い', '', '', '', '辛い'],
+    ticks_snap_bounds: 30
+  });
+  $("#depth").slider({
+    ticks: [0, 100, 200, 300, 400],
+    ticks_labels: ['スッキリ', '', '', '', '濃い'],
+    ticks_snap_bounds: 30
+  });
+
 </script>
