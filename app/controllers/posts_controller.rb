@@ -14,14 +14,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "post deleted"    
+    flash[:success] = "post deleted"
     redirect_to request.referrer || root_url
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:wine,:picture)
+      params.require(:post).permit(:wine,:picture,:radio,:slider)
     end
 
     def correct_user
