@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:wine,:picture,:radio,:slider)
+      params.require(:post).permit(:wine,:picture,:winecolor,:slider)
     end
 
     def correct_user

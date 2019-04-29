@@ -4,28 +4,26 @@
     <%= f.file_field :picture,accept: 'image/jpeg,image/gif,image/png' %>
   </span>
   <div class="radiobottons">
-    <div class="radio">
-      <label><input type="radio" name="radio" value="red">赤ワイン</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radio" value="white">白ワイン</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radio" value="rose">ロゼ</label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" name="radio" value="spark">スパークリング</label>
-    </div>
+    <label><%= f.radio_button :winecolor, "赤ワイン" %>赤ワイン</label>
+    <label><%= f.radio_button :winecolor, "白ワイン" %>白ワイン</label>
+    <label><%= f.radio_button :winecolor, "ロゼワイン" %>ロゼワイン</label>
+    <label><%= f.radio_button :winecolor, "スパークリングワイン" %>スパークリングワイン</label>
   </div>
+
   <div class="sliders">
-    <input id="sweet" type="text" name="slider" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'>
-    <input id="depth" type="text" name="slider" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'>
+    <%= f.range_field :sweetness, :in => 0..100, :step => 1,:name => "slider" %>
+    <%= f.range_field :depth, :in => 0..100, :step => 1%>
+    <!-- <input id="sweet" type="text" name="slider" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'>
+    <input id="depth" type="text" name="slider" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'> -->
   </div>
   <div class="field">
     <%= f.text_area :wine, placeholder: "感想レビュー" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
+
+
+
 
 <script type="text/javascript">
   $('#post_picture').bind('change', function(){

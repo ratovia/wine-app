@@ -3,6 +3,9 @@
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="wine">
     <%= post.wine %>
+    <%= post.winecolor %>
+    <%= post.sweetness %>
+    <%= post.depth %>
     <%= image_tag post.picture.url if post.picture? %>
   </span>
   <span class="timestamp">

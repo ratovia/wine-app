@@ -5,7 +5,8 @@ class Post < ActiveRecord::Base
   validates :user_id,presence: true
   validates :wine,presence: true, length: {maximum: 140}
   validate :picture_size
-
+  validates :depth,presence: true
+  validates :sweetness,presence: true
   private
     def picture_size
       if picture.size > 5.megabytes
